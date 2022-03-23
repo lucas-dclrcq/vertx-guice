@@ -6,6 +6,10 @@
     <artifactId>vertx-guice-example-service-proxy</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
+
     <parent>
         <groupId>com.ldclrcq</groupId>
         <artifactId>vertx-guice-parent</artifactId>
