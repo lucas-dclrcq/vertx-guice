@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>Vertx Guice::Examples::Service Proxy</name>
-    <artifactId>vertx-guice-example-service-proxy</artifactId>
+    <name>Vertx Guice::Examples::Manual</name>
+    <artifactId>vertx-guice-example-manual</artifactId>
     <packaging>jar</packaging>
 
     <parent>
         <groupId>com.ldclrcq</groupId>
         <artifactId>vertx-guice-parent</artifactId>
-        <version>2.0.0</version>
+        <version>0.3.4-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -25,15 +25,7 @@
         <dependency>
             <groupId>com.ldclrcq</groupId>
             <artifactId>vertx-guice</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-codegen</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-service-proxy</artifactId>
+            <version>0.3.4-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
