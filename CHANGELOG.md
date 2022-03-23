@@ -2,6 +2,43 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 2.0.1 - 2022-03-23
+#### Bug Fixes
+- examples should point to last release - (c284f75) - lucas-dclrcq
+#### Build system
+- also push parent - (9d664dd) - lucas-dclrcq
+- configure keyname for gpg signing - (ceb2969) - lucas-dclrcq
+- set source encoding to UTF-8 - (69aec3a) - lucas-dclrcq
+- use valid namespace - (6990f8b) - lucas-dclrcq
+- java doc should only be generated on release profile - (af7341d) - lucas-dclrcq
+- use parent version for modules - (b355f3f) - lucas-dclrcq
+- add cocogitto config - (cf10b2d) - lucas-dclrcq
+- migrate to maven with junit 5 - (449d8fc) - lucas-dclrcq
+#### Continuous Integration
+- setup gpg key via github secret - (7c6fb7f) - lucas-dclrcq
+- add sonar analysis - (bff0506) - lucas-dclrcq
+- configure gpg signature for releases - (42e5396) - lucas-dclrcq
+- remove useless maven cli opts - (4a683c1) - lucas-dclrcq
+- use valid path for settings.xml - (2fe3dae) - lucas-dclrcq
+- configure release workflow - (7ac30e8) - lucas-dclrcq
+- configure release hooks for cocogitto - (2bfe066) - lucas-dclrcq
+- use last version of cocogitto - (17f0fa9) - lucas-dclrcq
+- cocogitto should ignore merge commits - (d5e0314) - lucas-dclrcq
+- init cicd github workflow - (e541e69) - lucas-dclrcq
+#### Documentation
+- update badges - (15f834f) - lucas-dclrcq
+- document that this project is a fork - (fc73194) - lucas-dclrcq
+#### Features
+- update to work with Vertx 4 - (23889a6) - David N Hamilton
+#### Miscellaneous Chores
+- **(version)** 2.0.0 - (04e4713) - *lucas-dclrcq*
+#### Refactoring
+- global code cleanup - (7126961) - lucas-dclrcq
+- global code cleanup - (198b896) - lucas-dclrcq
+#### Tests
+- use recent version of surefire - (a34634f) - lucas-dclrcq
+- - -
+
 ## 2.0.0 - 2022-03-23
 #### Bug Fixes
 - examples should point to last release - (c284f75) - lucas-dclrcq
