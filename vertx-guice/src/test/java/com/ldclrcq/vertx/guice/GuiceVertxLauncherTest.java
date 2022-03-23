@@ -14,10 +14,10 @@ import static org.awaitility.Awaitility.await;
  * Implements test to verify work of the {@link GuiceVertxLauncher} class.
  */
 @ExtendWith(VertxExtension.class)
-public class GuiceVertxLauncherTest {
+class GuiceVertxLauncherTest {
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         VerticleWithVertxDependency.instanceCount.set(0);
     }
 
@@ -25,10 +25,10 @@ public class GuiceVertxLauncherTest {
      * Verifies that verticle with Vertx instance dependency in constructor can be deployed and run successfully.
      */
     @Test
-    public void testRun_VerticleWithDependency_VerticleRunSuccessfully() {
+    void testRun_VerticleWithDependency_VerticleRunSuccessfully() {
         // Arrange
         String[] args =
-            {"run", GuiceVerticleFactory.PREFIX + ":" + VerticleWithVertxDependency.class.getCanonicalName()};
+                {"run", GuiceVerticleFactory.PREFIX + ":" + VerticleWithVertxDependency.class.getCanonicalName()};
 
         GuiceVertxLauncher launcher = new GuiceVertxLauncher();
 
@@ -38,6 +38,6 @@ public class GuiceVertxLauncherTest {
 
         // Assert
         org.assertj.core.api.Assertions.assertThat(
-            VerticleWithVertxDependency.instanceCount.get()).isGreaterThan(0);
+                VerticleWithVertxDependency.instanceCount.get()).isPositive();
     }
 }

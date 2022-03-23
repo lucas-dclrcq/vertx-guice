@@ -22,14 +22,14 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Unit tests for {@link GuiceVerticleFactory} class.
  */
 @ExtendWith(VertxExtension.class)
-public class GuiceVerticleFactoryTest {
+class GuiceVerticleFactoryTest {
 
 
     private Injector injector;
     private GuiceVerticleFactory factory;
 
     @BeforeEach
-    public void setUp(Vertx vertx) {
+    void setUp(Vertx vertx) {
 
         this.injector = Guice.createInjector(new DependencyModule());
         this.factory = new GuiceVerticleFactory(this.injector);
@@ -37,7 +37,7 @@ public class GuiceVerticleFactoryTest {
     }
 
     @Test
-    public void testPrefix() {
+    void testPrefix() {
         // Assert
         assertThat(factory.prefix()).isEqualTo("java-guice");
     }
@@ -47,11 +47,11 @@ public class GuiceVerticleFactoryTest {
      * can be instantiated successfully.
      */
     @Test
-    public void testCreateVerticle_VerticleWithDependencyInConstructor_VerticleIsCreated(VertxTestContext context) {
+    void testCreateVerticle_VerticleWithDependencyInConstructor_VerticleIsCreated(VertxTestContext context) {
         // Arrange
         String identifier = GuiceVerticleFactory.PREFIX + ":" + VerticleWithDependency.class.getName();
         Promise<Callable<Verticle>> promise = Promise.promise();
-        promise.future().onComplete( result -> {
+        promise.future().onComplete(result -> {
             try {
                 Verticle verticle = result.result().call();
                 // Assert
@@ -72,7 +72,7 @@ public class GuiceVerticleFactoryTest {
      * then the single instance of this dependency is used by all verticles.
      */
     @Test
-    public void testCreateVerticle_DependencyBindedInSingletonScope_SameInstanceIsUsedByAllVerticles(Vertx vertx, VertxTestContext context) {
+    void testCreateVerticle_DependencyBindedInSingletonScope_SameInstanceIsUsedByAllVerticles(Vertx vertx, VertxTestContext context) {
         // Arrange
         this.injector = Guice.createInjector(new DependencyAsSingletonModule());
         this.factory = new GuiceVerticleFactory(this.injector);

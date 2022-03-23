@@ -43,34 +43,33 @@ public class GuiceVertxDeploymentManagerTest {
 
         // Assert
         org.assertj.core.api.Assertions.assertThat(
-            VerticleWithVertxDependency.instanceCount.get()).isGreaterThan(0);
+                VerticleWithVertxDependency.instanceCount.get()).isPositive();
     }
 
     /**
      * Verifies that verticle with dependency can be deployed successfully with specific deployment options.
      */
     @Test
-    public void testDeployVerticleWithOptions(Vertx vertx) {
-         // Act`
+    void testDeployVerticleWithOptions(Vertx vertx) {
+        // Act`
         GuiceVertxDeploymentManager deploymentManager = new GuiceVertxDeploymentManager(vertx);
         deploymentManager.deployVerticle(
-            VerticleWithVertxDependency.class,
-            new DeploymentOptions().setWorker(true));
+                VerticleWithVertxDependency.class,
+                new DeploymentOptions().setWorker(true));
 
         await().atMost(Duration.ofSeconds(5)).until(() -> VerticleWithVertxDependency.instanceCount.get() == 1);
 
         // Assert
         org.assertj.core.api.Assertions.assertThat(
-            VerticleWithVertxDependency.instanceCount.get()).isGreaterThan(0);
+                VerticleWithVertxDependency.instanceCount.get()).isPositive();
     }
 
     /**
      * Verifies that verticle with dependency can be deployed successfully and result of the deployment can be received
      * via providing completion handler.
-     *
      */
     @Test
-    public void testDeployVerticleWithCompletionHandler(Vertx vertx) {
+    void testDeployVerticleWithCompletionHandler(Vertx vertx) {
         // Act`
         ObservableFuture<String> deploymentResult = RxHelper.observableFuture();
 
@@ -88,18 +87,17 @@ public class GuiceVertxDeploymentManagerTest {
     /**
      * Verifies that verticle with dependency can be deployed successfully and result of the deployment can be received
      * via providing completion handler.
-     *
      */
     @Test
-    public void testDeployVerticleWithOptionsAndCompletionHandler(Vertx vertx) {
+    void testDeployVerticleWithOptionsAndCompletionHandler(Vertx vertx) {
         // Act`
         ObservableFuture<String> deploymentResult = RxHelper.observableFuture();
 
         GuiceVertxDeploymentManager deploymentManager = new GuiceVertxDeploymentManager(vertx);
         deploymentManager.deployVerticle(
-            VerticleWithVertxDependency.class,
-            new DeploymentOptions(),
-            deploymentResult.toHandler());
+                VerticleWithVertxDependency.class,
+                new DeploymentOptions(),
+                deploymentResult.toHandler());
 
         String deploymentId = deploymentResult.toBlocking().single();
 
