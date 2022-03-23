@@ -6,7 +6,7 @@
     <groupId>com.ldclrcq</groupId>
     <name>VertX Guice::Parent</name>
     <artifactId>vertx-guice-parent</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.2</version>
     <packaging>pom</packaging>
     <description>Enable Verticle dependency injection in Vert.x using Guice.</description>
     <url>https://github.com/lucas-dclrcq/vertx-guice</url>
