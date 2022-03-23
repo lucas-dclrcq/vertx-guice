@@ -8,6 +8,28 @@
     <artifactId>vertx-guice-parent</artifactId>
     <version>2.0.1</version>
     <packaging>pom</packaging>
+    <description>Enable Verticle dependency injection in Vert.x using Guice.</description>
+    <url>https://github.com/lucas-dclrcq/vertx-guice</url>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:ggit@github.com:lucas-dclrcq/vertx-guice.git</connection>
+        <developerConnection>scm:git:git@github.com:lucas-dclrcq/vertx-guice.git</developerConnection>
+        <url>https://github.com/lucas-dclrcq/vertx-guice/</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>contact@ldclrcq.com</email>
+            <organizationUrl>https://github.com/lucas-dclrcq</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
