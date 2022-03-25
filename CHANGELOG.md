@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 2.0.3 - 2022-03-25
+#### Refactoring
+- use single module architecture - (26fcbd1) - lucas-dclrcq
+- - -
+
 ## 2.0.1 - 2022-03-23
 #### Bug Fixes
 - examples should point to last release - (c284f75) - lucas-dclrcq
