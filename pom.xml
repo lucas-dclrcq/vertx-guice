@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ldclrcq</groupId>
-    <name>VertX Guice::Parent</name>
-    <artifactId>vertx-guice-parent</artifactId>
+    <name>VertX Guice</name>
+    <artifactId>vertx-guice</artifactId>
     <version>2.0.1</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <description>Enable Verticle dependency injection in Vert.x using Guice.</description>
     <url>https://github.com/lucas-dclrcq/vertx-guice</url>
 
@@ -40,55 +40,55 @@
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
-    <modules>
-        <module>vertx-guice</module>
-        <module>vertx-guice-examples/launcher</module>
-        <module>vertx-guice-examples/manual</module>
-        <module>vertx-guice-examples/service-proxy</module>
-    </modules>
+    <dependencies>
+        <!--  Vertx  -->
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-junit5</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-rx-java</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-codegen</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-service-proxy</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
 
-    <dependencyManagement>
-        <dependencies>
-            <!--  Vertx  -->
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-core</artifactId>
-                <version>${vertx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-junit5</artifactId>
-                <version>${vertx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-rx-java</artifactId>
-                <version>${vertx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-codegen</artifactId>
-                <version>${vertx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-service-proxy</artifactId>
-                <version>${vertx.version}</version>
-            </dependency>
+        <!--  Guice  -->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
 
-            <!--  Guice  -->
-            <dependency>
-                <groupId>com.google.inject</groupId>
-                <artifactId>guice</artifactId>
-                <version>${guice.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+        <!--  Test  -->
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.22.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

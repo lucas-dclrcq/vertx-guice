@@ -11,7 +11,6 @@ post_bump_hooks = [
     "git push --set-upstream origin release/{{version}}",
     "git push origin {{version}}",
     "mvn deploy -s ci/.m2/settings.xml --batch-mode -P release",
-    "mvn -f vertx-guice deploy -s ci/.m2/settings.xml --batch-mode -P release",
     "git checkout master",
     "git merge --no-ff release/{{version}} -m \"chore: merge release branch {{version}} \"",
     "mvn versions:set -DnewVersion={{version+1patch-SNAPSHOT}}",
